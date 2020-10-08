@@ -273,10 +273,12 @@ var UIController = (function() {
         // > list them: inc 01 = Current Account A, inc 02 > list more types coming-in.
         addListItem: function(obj, type) {
                 var html, newHtml, element;
-                
+                // var account = "accA" "accB";
+            //     console.log(inc__currentAccountA);
+/*               
 // Developing a switch case rather than using the existing if-statement.
-            switch (type, account) {
-                case "inc__currentAccountA":
+            switch (account) {
+                case "inc__accA":
                     element = DOMstrings.incomeContainer;
                     html = `<div class="item clearfix" id="income-0">
                     <div class="item__description">%description__currentAccountA%</div>
@@ -333,19 +335,28 @@ var UIController = (function() {
                 default:
                 // code here....
             }
+*/            
                 
-/*
-                // Create HTML string with placeholder text. %id% will be replaced with the actual data from the object.                if (type === 'inc') {
+
+// Create HTML string with placeholder text. %id% will be replaced with the actual data from the object.                
+                
+                if (type === 'inc_accA') {
                     element = DOMstrings.incomeContainer;
-// change this string so it has 2 columns one for each bank account:
-                    html = '<div class="item clearfix" id="inc-%id%"> <div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                    html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountA%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
         
-                } else if (type === 'exp') {
+                } else if (type === 'inc_accB') {
+                    element = DOMstrings.incomeContainer;
+                    html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountB%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountB%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                    
+                } else if (type === 'exp__accA') {
                     element = DOMstrings.expensesContainer;
-// change this string so it has 2 columns one for each bank account:
-                    html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                    html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAccountA%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+           //   } else if (type === 'exp__accB') {
+                } else {
+                    element = DOMstrings.expensesContainer;
+                    html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description_CurrentAccountB%</div><div class="right clearfix"><div class="item__value">%value_CurrentAccountB%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
                 }
- */               
+               
 
                 // Replace the placeholder text with some actual data: replace method:
                 // html is a string and strings have their own methods incl. replace.
