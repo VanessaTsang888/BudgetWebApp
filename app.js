@@ -272,18 +272,62 @@ var UIController = (function() {
                 
 // Developing a switch case rather than using the existing if-statement.
             switch (type, account) {
-                case "in__currentAccountA":
-
-                // code here...
-
+                case "inc__currentAccountA":
+                    element = DOMstrings.incomeContainer;
+                    html = `<div class="item clearfix" id="income-0">
+                    <div class="item__description">%description__currentAccountA%</div>
+                    <div class="right clearfix">
+                        <div class="item__value">%value__currentAccountA%</div>
+                        <div class="item__delete">
+                            <button class="item__delete--btn">
+                            <i class="ion-ios-close-outline"></i></button>
+                        </div>
+                    </div>
+                </div>`
                     break;
-                case "in__currentAccountB":
-                 // code here...
-                 
+                case "inc__currentAccountB":
+                    html = `<div class="item clearfix" id="income-0">
+                    <div class="item__description">%description__currentAccountB%</div>
+                    <div class="right clearfix">
+                        <div class="item__value">%value__currentAccountB%</div>
+                        <div class="item__delete">
+                            <button class="item__delete--btn">
+                            <i class="ion-ios-close-outline"></i></button>
+                        </div>
+                    </div>
+                </div>`
                     break;
+                case "exp__currentAccountA":
+                    element = DOMstrings.incomeContainer;
+                    html = `<div class="item clearfix" id="expense-0">
+                    <div class="item__description">%description__currentAccountA%</div>
+                    <div class="right clearfix">
+                        <div class="item__value">%value__currentAccountA%</div>
+                        <div class="item__percentage">21%</div>
+                        <div class="item__delete">
+                            <button class="item__delete--btn">
+                            <i class="ion-ios-close-outline">
+                            </i></button>
+                        </div>
+                    </div>
+                </div>`
+                    break;
+                case "inc__currentAccountB":
+                    element = DOMstrings.incomeContainer;
+                    html = `<div class="item clearfix" id="expense-0">
+                    <div class="item__description">%description__currentAccountB%</div>
+                    <div class="right clearfix">
+                        <div class="item__value">%value__currentAccountB%</div>
+                        <div class="item__percentage">21%</div>
+                        <div class="item__delete">
+                            <button class="item__delete--btn">
+                            <i class="ion-ios-close-outline">
+                            </i></button>
+                        </div>
+                    </div>
+                </div>`
                 default:
                 // code here....
-                
             }
                 
 
