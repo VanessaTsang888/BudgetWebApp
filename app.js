@@ -188,7 +188,9 @@ var UIController = (function() {
 // Data structure to make our life easier later on. A central place where all our strings are nicely stored, and we can then retrieve them & change them
 // easily, if and when need to.
 // This is how DOM is accessing the HTML:
+// Quick Win: 2 columns, 2 current accounts:
     var DOMstrings = {
+        accountType: '.currentAccount__type',
         inputType: '.add__type',
         inputDescription: '.add__description',
         inputValue: '.add__value',
@@ -253,6 +255,8 @@ var UIController = (function() {
             return {
             // We read the value of the type. Will be either inc or exp. Will passed into the add item method, we expect either inc or exp.
             type: document.querySelector(DOMstrings.inputType).value,
+         // type: document.querySelector(DOMstrings.accountType).value,
+
             // Use a function called parseFloat to convert a string into a decimal number. So this function will take this string here. 
             description: document.querySelector(DOMstrings.inputDescription).value,
             value: parseFloat(document.querySelector(DOMstrings.inputValue).value) 
@@ -330,7 +334,7 @@ var UIController = (function() {
                 // code here....
             }
                 
-
+/*
                 // Create HTML string with placeholder text. %id% will be replaced with the actual data from the object.                if (type === 'inc') {
                     element = DOMstrings.incomeContainer;
 // change this string so it has 2 columns one for each bank account:
@@ -341,7 +345,7 @@ var UIController = (function() {
 // change this string so it has 2 columns one for each bank account:
                     html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
                 }
-                
+ */               
 
                 // Replace the placeholder text with some actual data: replace method:
                 // html is a string and strings have their own methods incl. replace.
@@ -459,6 +463,7 @@ var UIController = (function() {
             // Select the 3 elements that is going to receive the focus class and the button to give it the red class. Will receive the red focus class. Constructing a string.
             var fields = document.querySelectorAll(
                 DOMstrings.inputType + ',' +
+             // DOMstrings.accountType + ',' +
                 DOMstrings.inputDescription + ',' +
                 DOMstrings.inputValue);
                 // will return a node list:
@@ -510,7 +515,7 @@ console.log(DOM.inputBtn);
         document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
 // Imprioving the UX of our input form. Method called: changeType, using change event called: changedType. The: UICtrl.changedType is the callback function (has a method called: changedType) we going to write into the UI.
         document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changedType);
-
+    //  document.querySelector(DOM.accountType).addEventListener('change', UICtrl.changedType);
     };
 
 
