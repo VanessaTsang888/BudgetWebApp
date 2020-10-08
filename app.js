@@ -190,7 +190,7 @@ var UIController = (function() {
 // This is how DOM is accessing the HTML:
 // Quick Win: 2 columns, 2 current accounts:
     var DOMstrings = {
-        accountType: '.currentAccount__type',
+        // accountType: '.currentAccount__type',
         inputType: '.add__type',
         inputDescription: '.add__description',
         inputValue: '.add__value',
@@ -344,9 +344,9 @@ var UIController = (function() {
                     element = DOMstrings.incomeContainer;
                 //  html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountA%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
                     html = `<div class="item clearfix" id="income-0">
-                    <div class="item__description">%description%</div>
+                    <div class="item__description">%descriptioncurrentAccountA%</div>
                     <div class="right clearfix">
-                        <div class="item__value">%value%</div>
+                        <div class="item__value">%valuecurrentAccountA%</div>
                         <div class="item__delete">
                             <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
                         </div>
@@ -356,14 +356,15 @@ var UIController = (function() {
                     element = DOMstrings.incomeContainer;
                //   html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountB%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountB%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
                html = `<div class="item clearfix" id="income-0">
-               <div class="item__description">%description%</div>
+               <div class="item__description">%descriptioncurrentAccountBA%</div>
                <div class="right clearfix">
-                   <div class="item__value">%value%</div>
+                   <div class="item__value">%valuecurrentAccountB%</div>
                    <div class="item__delete">
                        <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
                    </div>
                </div>
            </div>`
+  
                 } else if (type === 'exp__accA') {
                     element = DOMstrings.expensesContainer;
                 //  html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAccountA%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
@@ -392,6 +393,7 @@ var UIController = (function() {
                  </div>
              </div>`    
                 }
+
                
 
                 // Replace the placeholder text with some actual data: replace method:
