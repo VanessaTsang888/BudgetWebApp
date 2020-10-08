@@ -190,7 +190,7 @@ var UIController = (function() {
 // This is how DOM is accessing the HTML:
 // Quick Win: 2 columns, 2 current accounts:
     var DOMstrings = {
-        // accountType: '.currentAccount__type',
+        inputAccTypes: '.add__acc__type',
         inputType: '.add__type',
         inputDescription: '.add__description',
         inputValue: '.add__value',
@@ -458,6 +458,8 @@ var UIController = (function() {
             obj.budget > 0 ? type = 'inc' : type = 'exp';
             document.querySelector(DOMstrings.budgetLabel).textContent = formatNumber(obj.budget, type);
             document.querySelector(DOMstrings.incomeLabel).textContent = formatNumber(obj.totalInc, 'inc');
+            document.querySelector(DOMstrings.incomeLabel).textContent = formatNumber(obj.totalInc, 'inc__accA');
+            document.querySelector(DOMstrings.incomeLabel).textContent = formatNumber(obj.totalInc, 'inc__accB');
             document.querySelector(DOMstrings.expensesLabel).textContent = formatNumber(obj.totalExp, 'exp');
             
 
