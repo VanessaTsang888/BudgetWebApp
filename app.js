@@ -342,19 +342,55 @@ var UIController = (function() {
                 
                 if (type === 'inc_accA') {
                     element = DOMstrings.incomeContainer;
-                    html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountA%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
-        
+                //  html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountA%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                    html = `<div class="item clearfix" id="income-0">
+                    <div class="item__description">%descriptionCurrentAccountA%</div>
+                    <div class="right clearfix">
+                        <div class="item__value">%valueCurrentAccountA%</div>
+                        <div class="item__delete">
+                            <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                        </div>
+                    </div>
+                </div>`
                 } else if (type === 'inc_accB') {
                     element = DOMstrings.incomeContainer;
-                    html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountB%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountB%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
-                    
+               //   html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description_CurrentAccountB%</div><div class="right clearfix"><div class="item__value">%value_CurrentAcccountB%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+               html = `<div class="item clearfix" id="income-0">
+               <div class="item__description">%descriptionCurrentAccountB%</div>
+               <div class="right clearfix">
+                   <div class="item__value">%valueCurrentAccountB%</div>
+                   <div class="item__delete">
+                       <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                   </div>
+               </div>
+           </div>`
                 } else if (type === 'exp__accA') {
                     element = DOMstrings.expensesContainer;
-                    html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAccountA%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
-           //   } else if (type === 'exp__accB') {
+                //  html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description_CurrentAccountA%</div><div class="right clearfix"><div class="item__value">%value_CurrentAccountA%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+           html = `<div class="item clearfix" id="expense-0">
+           <div class="item__description">%descriptionCurrentAccountA%</div>
+           <div class="right clearfix">
+               <div class="item__value">%valueCurrentAccountA%</div>
+               <div class="item__percentage">21%</div>
+               <div class="item__delete">
+                   <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+               </div>
+           </div>
+       </div>`
+                //   } else if (type === 'exp__accB') {
                 } else {
                     element = DOMstrings.expensesContainer;
-                    html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description_CurrentAccountB%</div><div class="right clearfix"><div class="item__value">%value_CurrentAccountB%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                 // html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description_CurrentAccountB%</div><div class="right clearfix"><div class="item__value">%value_CurrentAccountB%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                 html = `<div class="item clearfix" id="expense-0">
+                 <div class="item__description">%descriptionCurrentAccountB%</div>
+                 <div class="right clearfix">
+                     <div class="item__value">%valueCurrentAccountB%</div>
+                     <div class="item__percentage">21%</div>
+                     <div class="item__delete">
+                         <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+                     </div>
+                 </div>
+             </div>`    
                 }
                
 
