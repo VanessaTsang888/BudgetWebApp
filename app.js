@@ -187,6 +187,7 @@ var UIController = (function() {
 // Method - Private variable to store all the strings from the UIController.
 // Data structure to make our life easier later on. A central place where all our strings are nicely stored, and we can then retrieve them & change them
 // easily, if and when need to.
+// This is how DOM is accessing the HTML:
     var DOMstrings = {
         inputType: '.add__type',
         inputDescription: '.add__description',
@@ -261,18 +262,39 @@ var UIController = (function() {
         // Add our newly created object to the user interface and this means that we're going to do some DOM manipulation. Public method this UI Controller.
         // To add this new item to the list, we need object itself - we call it obj. So we need the obj and the type (either the income or expense).
         // This obj is the object we created using our function constructor then passed to our app controller.
+        // 1. Change to if-statement to a switch case model?;
+        // 2. HTML strings: add 2 columns one for each bank account:
+        // 3. Find where the addListItem is called, and update that.
+        
+        // > list them: inc 01 = Current Account A, inc 02 > list more types coming-in.
         addListItem: function(obj, type) {
                 var html, newHtml, element;
-                // Create HTML string with placeholder text. %id% will be replaced with the actual data from the object.
+                
+// Developing a switch case rather than using the existing if-statement.
+            switch (type, account) {
+                case "in__currentAccountA":
 
-                if (type === 'inc') {
+                // code here...
+
+                    break;
+                case "in__currentAccountB":
+                 // code here...
+                 
+                    break;
+                default:
+                // code here....
+                
+            }
+                
+
+                // Create HTML string with placeholder text. %id% will be replaced with the actual data from the object.                if (type === 'inc') {
                     element = DOMstrings.incomeContainer;
-
+// change this string so it has 2 columns one for each bank account:
                     html = '<div class="item clearfix" id="inc-%id%"> <div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
         
                 } else if (type === 'exp') {
                     element = DOMstrings.expensesContainer;
-
+// change this string so it has 2 columns one for each bank account:
                     html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
                 }
                 
@@ -556,7 +578,7 @@ console.log(DOM.inputBtn);
 // Call our setup event listeners function, which was why we created this init function.
     return {
         init: function() {
-            console.log('Application has started.');
+            console.log('Application has started...');
             // This method is to call the data object constructure:
             UICtrl.displayMonth();
             // pass an object but with everything set to 0. 
